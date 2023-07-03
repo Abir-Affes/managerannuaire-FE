@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
-
+const routes: Routes = [
+  
+  {
+    path: 'users/home',
+    redirectTo: 'users/home',
+  },
+  {
+    path: 'specialities/home',
+    redirectTo: 'specialities/home',
+  },
+  
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
