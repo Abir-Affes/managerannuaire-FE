@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SpecialitiesModule } from './specialities/specialities.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { SpecialitiesModule } from './specialities/specialities.module';
     MatDividerModule,
     MatFormFieldModule,
     SpecialitiesModule,
-
+    SubscriptionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

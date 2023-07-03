@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsersRoutingModule } from './users-routing.module';
+import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { HomeComponent } from './home/home.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
@@ -16,8 +16,8 @@ import { EditComponent } from './edit/edit.component';
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule,
+    SubscriptionsRoutingModule,
     FormsModule
   ]
 })
-export class UsersModule { }
+export class SubscriptionsModule { }

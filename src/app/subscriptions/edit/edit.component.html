@@ -1,0 +1,18 @@
+<div class="container">
+    <legend>Create Subscription</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtExperation" class="form-label">Experation</label>
+        <input type="date" name="experation" [(ngModel)] = "subscriptionForm.experation" class="form-control" id="txtExperation" />
+      </div>
+      <div class="mb-3">
+        <label for="txtAmount" class="form-label">Amount</label>
+        <input type="number" name="amount" [(ngModel)] = "subscriptionForm.amount" class="form-control" id="txtAmount" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPayment" class="form-label">Payment</label>
+        <input type="number" name="payment" [(ngModel)] = "subscriptionForm.payment" class="form-control" id="txtPayment" />
+      </div>
+      <button type="button" (click)="update()" class="btn btn-primary">Create</button>
+    </form>
+  </div>

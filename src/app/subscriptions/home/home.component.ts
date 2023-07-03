@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../users';
-import { UsersService } from '../users.service';
+import { Subscriptions } from '../subscriptions';
+import { SubscriptionsService } from '../subscriptions.service';
  
 declare var window: any;
  
@@ -10,11 +10,11 @@ declare var window: any;
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  allUsers: Users[] = [];
+  allSubscriptions: Subscriptions[] = [];
   deleteModal: any;
   idTodelete: number = 0;
  
-  constructor(private userService: UsersService) {}
+  constructor(private subscriptionService: SubscriptionsService) {}
  
   ngOnInit(): void {
     this.deleteModal = new window.bootstrap.Modal(
@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
   }
  
   get() {
-    this.userService.get().subscribe((data) => {
-      this.allUsers = data;
+    this.subscriptionService.get().subscribe((data) => {
+      this.allSubscriptions = data;
     });
   }
  
@@ -36,9 +36,9 @@ export class HomeComponent implements OnInit {
   }
  
   delete() {
-    this.userService.delete(this.idTodelete).subscribe({
+    this.subscriptionService.delete(this.idTodelete).subscribe({
       next: (data) => {
-        this.allUsers = this.allUsers.filter(_ => _.id != this.idTodelete)
+        this.allSubscriptions = this.allSubscriptions.filter(_ => _.id != this.idTodelete)
         this.deleteModal.hide();
       },
     });

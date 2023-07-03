@@ -8,9 +8,19 @@ import { Users } from './users';
 export class UsersService {
   constructor(private http: HttpClient) {}
   get() {
-    return this.http.get<Users[]>('http://localhost:3000/users');
+    return this.http.get<Users[]>('http://localhost:8089/users');
   }
   create(payload: Users) {
-    return this.http.post<Users>('http://localhost:3000/users', payload);
+    return this.http.post<Users>('http://localhost:8089/users', payload);
   }
+  getById(id: number) {
+    return this.http.get<Users>(`http://localhost:8089/users/${id}`);
+   }
+    
+   update(payload:Users){
+    return this.http.put(`http://localhost:8089/users/${payload.id}`,payload);
+   }
+   delete(id:number){
+    return this.http.delete<Users>(`http://localhost:8089/users/${id}`);
+ }
 }

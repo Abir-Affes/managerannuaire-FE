@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'specialities/home',
     redirectTo: 'specialities/home',
   },
+  {
+    path: 'subscriptions/home',
+    redirectTo: 'subscriptions/home',
+  },
   
 ];
 @NgModule({
