@@ -19,6 +19,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteConfirmationDialogComponent } from './specialities/home/delete-confirmation-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -27,6 +32,9 @@ import {MatInputModule} from '@angular/material/input';
     AppComponent,
     NavbarComponent,
     DeleteConfirmationDialogComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +53,10 @@ import {MatInputModule} from '@angular/material/input';
     SubscriptionsModule,
     MatDialogModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
