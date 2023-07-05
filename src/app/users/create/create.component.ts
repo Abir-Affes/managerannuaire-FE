@@ -30,15 +30,19 @@ export class CreateComponent implements OnInit {
  
   ngOnInit(): void {
     this.get();
+    console.log("one");
   }
  
   get() {
     this.specialityService.get().subscribe((data) => {
+      console.log("two");
       this.allSpecialities = data;
+      console.log("three");
     });
   }
  
   create(){
+    console.log("four");
     this.userService.create(this.userForm)
     .subscribe({
       next:(data) => {
@@ -48,5 +52,6 @@ export class CreateComponent implements OnInit {
         console.log(err);
       }
     })
+    console.log("five");
   }
 }

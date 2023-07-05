@@ -15,13 +15,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SpecialitiesModule } from './specialities/specialities.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteConfirmationDialogComponent } from './specialities/home/delete-confirmation-dialog.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-
+    DeleteConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
     MatDividerModule,
     MatFormFieldModule,
     SpecialitiesModule,
-    SubscriptionsModule
+    SubscriptionsModule,
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

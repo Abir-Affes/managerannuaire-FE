@@ -38,7 +38,7 @@ export class EditComponent implements OnInit {
     this.subscriptionService.update(this.subscriptionForm)
     .subscribe({
       next:(data) => {
-        this.router.navigate(["/fruits/home"]);
+        this.router.navigate(["/subscriptions/home"]);
       },
       error:(err) => {
         console.log(err);

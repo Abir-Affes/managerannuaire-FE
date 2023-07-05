@@ -1,5 +1,5 @@
 <div class="container">
-    <legend>Create User</legend>
+    <legend>Edit User</legend>
     <form>
       <div class="mb-4">
         <label for="txtEmail" class="form-label">Email</label>
@@ -11,7 +11,7 @@
       </div>
       <div class="mb-4">
         <label for="txtPassword" class="form-label">Password</label>
-        <input type="text" name="password" [(ngModel)] = "userForm.password" class="form-control" id="txtPassword" />
+        <input type="password" name="password" [(ngModel)] = "userForm.password" class="form-control" id="txtPassword" />
       </div>
       <div class="mb-4">
         <label for="txtSpeciality" class="form-label">speciality</label>
@@ -21,6 +21,6 @@
             </option>
         </select>
       </div>
-      <button type="button" (click)="update()" class="btn btn-primary">Create</button>
+      <button type="button" (click)="update()" class="btn btn-primary">Edit</button>
     </form>
 </div>
