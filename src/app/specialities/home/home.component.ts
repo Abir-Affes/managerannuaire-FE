@@ -10,6 +10,8 @@ declare var window: any;
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  displayedColumns = ['id', 'name', 'description', 'actions'];
+
   allSpecialities: Specialities[] = [];
   deleteModal: any;
   idTodelete: number = 0;
@@ -17,9 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private specialityService: SpecialitiesService) {}
  
   ngOnInit(): void {
-    this.deleteModal = new window.bootstrap.Modal(
-      document.getElementById('deleteModal')
-    );
+    
  
     this.get();
   }

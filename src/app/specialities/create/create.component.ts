@@ -20,7 +20,7 @@ export class CreateComponent implements OnInit {
  
   ngOnInit(): void {}
  
-  create(){
+  save(){
     this.specialityService.create(this.specialityForm)
     .subscribe({
       next:(data) => {

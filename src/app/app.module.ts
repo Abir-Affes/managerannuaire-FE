@@ -18,6 +18,8 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteConfirmationDialogComponent } from './specialities/home/delete-confirmation-dialog.component';
 import { MatTableModule } from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { MatTableModule } from '@angular/material/table';
     SpecialitiesModule,
     SubscriptionsModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
