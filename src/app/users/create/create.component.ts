@@ -35,13 +35,11 @@ export class CreateComponent implements OnInit {
  
   get() {
     this.specialityService.get().subscribe((data) => {
-      console.log("two");
       this.allSpecialities = data;
-      console.log("three");
     });
   }
  
-  create(){
+  save(){
     console.log("four");
     this.userService.create(this.userForm)
     .subscribe({

@@ -9,6 +9,8 @@ import { SubscriptionsService } from '../subscriptions.service';
   styleUrls: ['./edit.component.css'],
 })
 export class EditComponent implements OnInit {
+  experation: Date | undefined;
+
   subscriptionForm: Subscriptions = {
     id: 0,
     experation: new Date(),

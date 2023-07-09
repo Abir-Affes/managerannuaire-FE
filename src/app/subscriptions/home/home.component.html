@@ -1,35 +1,43 @@
-<div class="container">
-    <div class="row mt-2">
-        <div class="col col-md-4 offset-md-4">
-          <a class="btn btn-primary" routerLink="/subscriptions/create">Create</a>
-        </div>
-      </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Experation date</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Payment mode</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of allSubscriptions">
-          <th scope="row">{{ item.id }}</th>
-          <td>{{ item.experation }}</td>
-          <td>{{ item.amount }}</td>
-          <td>{{ item.payment }}</td>
-          <td>
-            <a class="btn btn-primary" [routerLink]="['/subscriptions/edit', item.id]">Edit</a>
-            <button type="button" (click)="openDeleteModal(item.id)" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
+
+
+<br><br>
+<button mat-raised-button color="primary" routerLink="/subscriptions/create" style="margin-left: 40%;width: 200PX;height: 50PX;">Create a specialty</button><br><br><br>
+<table mat-table #table [dataSource]="allSubscriptions">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="experation">
+    <mat-header-cell *matHeaderCellDef> Expiration date </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.experation }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.amount}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="payment">
+    <mat-header-cell *matHeaderCellDef> Payment mode </mat-header-cell>
+    <mat-cell *matCellDef="let item"> {{item.payment}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let item">
+      <a [routerLink]="['/subscriptions/edit', item.id]" mat-raised-button color="primary">Edit</a>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</table>
+
 
 <!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--div-- class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -37,7 +45,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure to delete the item?
+        Are you sure to delete this speciality?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -45,4 +53,4 @@
       </div>
     </div>
   </div>
-</div>
+</!--div-->

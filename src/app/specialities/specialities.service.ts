@@ -9,21 +9,21 @@ export class SpecialitiesService {
 
   constructor(private http: HttpClient) {}
   get() {
-    return this.http.get<Specialities[]>('http://localhost:8087/specialities');
+    return this.http.get<Specialities[]>('http://localhost:8080/specialities');
   }
   create(payload: Specialities) {
     console.log(payload);
-    return this.http.post<Specialities>('http://localhost:8087/specialities', payload);
+    return this.http.post<Specialities>('http://localhost:8080/specialities', payload);
   }
   getById(id: number) {
-    return this.http.get<Specialities>(`http://localhost:8087/specialities/${id}`);
+    return this.http.get<Specialities>(`http://localhost:8080/specialities/${id}`);
    }
     
    update(payload:Specialities){
-    return this.http.put(`http://localhost:8087/specialities`,payload);
+    return this.http.put(`http://localhost:8080/specialities`,payload);
    }
-   delete(id:number){
+   /*delete(id:number){
     console.log(id);
-    return this.http.delete<Specialities>(`http://localhost:8087/specialities/${id}`);
- }
+    return this.http.delete<Specialities>(`http://localhost:8080/specialities/${id}`);
+ }*/
 }

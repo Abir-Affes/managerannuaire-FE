@@ -30,17 +30,5 @@ export class HomeComponent implements OnInit {
     });
   }
  
-  openDeleteModal(id: number) {
-    this.idTodelete = id;
-    this.deleteModal.show();
-  }
- 
-  delete() {
-    this.specialityService.delete(this.idTodelete).subscribe({
-      next: (data) => {
-        this.allSpecialities = this.allSpecialities.filter(_ => _.id != this.idTodelete)
-        this.deleteModal.hide();
-      },
-    });
-  }
+  
 }

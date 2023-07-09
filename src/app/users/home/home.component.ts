@@ -10,6 +10,8 @@ declare var window: any;
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  displayedColumns = ['id', 'email', 'username', 'actions'];
+
   allUsers: Users[] = [];
   deleteModal: any;
   idTodelete: number = 0;
@@ -17,9 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UsersService) {}
  
   ngOnInit(): void {
-    this.deleteModal = new window.bootstrap.Modal(
-      document.getElementById('deleteModal')
-    );
+    
  
     this.get();
   }
@@ -30,17 +30,5 @@ export class HomeComponent implements OnInit {
     });
   }
  
-  openDeleteModal(id: number) {
-    this.idTodelete = id;
-    this.deleteModal.show();
-  }
- 
-  delete() {
-    this.userService.delete(this.idTodelete).subscribe({
-      next: (data) => {
-        this.allUsers = this.allUsers.filter(_ => _.id != this.idTodelete)
-        this.deleteModal.hide();
-      },
-    });
-  }
+  
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscriptions } from '../subscriptions';
 import { SubscriptionsService } from '../subscriptions.service';
- 
+import { DatePipe } from '@angular/common';
+
 declare var window: any;
  
 @Component({
@@ -9,17 +10,17 @@ declare var window: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
 export class HomeComponent implements OnInit {
+  displayedColumns = ['id', 'experation', 'amount', 'payment', 'actions'];
   allSubscriptions: Subscriptions[] = [];
   deleteModal: any;
   idTodelete: number = 0;
  
-  constructor(private subscriptionService: SubscriptionsService) {}
+  constructor(private subscriptionService: SubscriptionsService, private datePipe: DatePipe) {}
  
   ngOnInit(): void {
-    this.deleteModal = new window.bootstrap.Modal(
-      document.getElementById('deleteModal')
-    );
+    
  
     this.get();
   }
@@ -28,19 +29,6 @@ export class HomeComponent implements OnInit {
     this.subscriptionService.get().subscribe((data) => {
       this.allSubscriptions = data;
     });
-  }
- 
-  openDeleteModal(id: number) {
-    this.idTodelete = id;
-    this.deleteModal.show();
-  }
- 
-  delete() {
-    this.subscriptionService.delete(this.idTodelete).subscribe({
-      next: (data) => {
-        this.allSubscriptions = this.allSubscriptions.filter(_ => _.id != this.idTodelete)
-        this.deleteModal.hide();
-      },
-    });
+    
   }
 }

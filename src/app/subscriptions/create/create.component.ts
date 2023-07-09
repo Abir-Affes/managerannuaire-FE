@@ -9,6 +9,7 @@ import { SubscriptionsService } from '../subscriptions.service';
   styleUrls: ['./create.component.css'],
 })
 export class CreateComponent implements OnInit {
+  experation: Date | undefined;
   subscriptionForm: Subscriptions = {
     id: 0,
     experation: new Date(),
@@ -21,7 +22,7 @@ export class CreateComponent implements OnInit {
  
   ngOnInit(): void {}
  
-  create(){
+  save(){
     this.subscriptionService.create(this.subscriptionForm)
     .subscribe({
       next:(data) => {

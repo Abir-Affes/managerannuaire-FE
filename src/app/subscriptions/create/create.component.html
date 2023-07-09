@@ -1,4 +1,4 @@
-<div class="container">
+<!--div class="container">
     <legend>Create Subscription</legend>
     <form>
       <div class="mb-3">
@@ -15,4 +15,33 @@
       </div>
       <button type="button" (click)="create()" class="btn btn-primary">Create</button>
     </form>
-  </div>
+  </!--div-->
+
+
+  <br><br><br>
+  <form #editForm="ngForm" (ngSubmit)="save()">
+  
+   
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter the experation date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Enter the experation date" [(ngModel)]="experation" id="experation" name="experation">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput type="number" step="0.01" placeholder="Enter the amount" [(ngModel)]="subscriptionForm.amount" id="amount" name="amount">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" placeholder="Enter the payment mode" [(ngModel)]="subscriptionForm.payment" id="payment" name="payment">
+    </mat-form-field>
+  
+  
+    <div class="button-row" role="group">
+      <button type="submit" mat-raised-button color="primary" >Create</button>
+      <button type="button" mat-button color="accent" routerLink="/subscriptions/home" >Cancel</button>
+    </div>
+  </form>

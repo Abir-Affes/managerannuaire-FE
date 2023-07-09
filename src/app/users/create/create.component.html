@@ -1,4 +1,4 @@
-<div class="container">
+<!--div class="container">
     <legend>Create User</legend>
     <form>
       <div class="mb-4">
@@ -23,4 +23,37 @@
       </div>
       <button type="button" (click)="create()" class="btn btn-primary">Create</button>
     </form>
-</div>
+</!--div-->
+
+<br><br><br>
+  <form #editForm="ngForm" (ngSubmit)="save()">
+  
+   
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="email" placeholder="Enter the email"   [(ngModel)]="userForm.email" id="email" name="email" >
+    </mat-form-field><br>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" placeholder="Enter the username" [(ngModel)]="userForm.username" id="username" name="username">
+    </mat-form-field><br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="password" placeholder="Enter the password" [(ngModel)]="userForm.password" id="password" name="password">
+    </mat-form-field><br>
+
+    <mat-form-field  class="example-full-width">
+      <mat-label>Speciality</mat-label>
+      <mat-select style="color: black; background-color: rgb(200, 37, 108);" [(ngModel)]="userForm.speciality.id" class="form-control" name="speciality">
+        <mat-option *ngFor="let option of allSpecialities" [value]="option.id">
+          {{option.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  
+    <div class="button-row" role="group">
+      <button type="submit" mat-raised-button color="primary" >Create</button>
+      <button type="button" mat-button color="accent" routerLink="/users/home" >Cancel</button>
+    </div>
+  </form>

@@ -1,4 +1,4 @@
-<div class="container">
+<!--div class="container">
     <legend>Edit Speciality</legend>
     <form>
       <div class="mb-2">
@@ -11,4 +11,24 @@
       </div>
       <button type="button" (click)="update()" class="btn btn-primary">Edit</button>
     </form>
-  </div>
+  </!--div-->
+
+  <br><br><br>
+  <form #editForm="ngForm" (ngSubmit)="update()">
+  
+   
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter the name"   [(ngModel)]="specialityForm.name" id="name" name="name" >
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter the name" [(ngModel)]="specialityForm.description" id="description" name="description">
+    </mat-form-field>
+  
+  
+    <div class="button-row" role="group">
+      <button type="submit" mat-raised-button color="primary" >Edit</button>
+      <button type="button" mat-button color="accent" routerLink="/specialities/home" >Cancel</button>
+    </div>
+  </form>

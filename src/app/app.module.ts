@@ -16,7 +16,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SpecialitiesModule } from './specialities/specialities.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DeleteConfirmationDialogComponent } from './specialities/home/delete-confirmation-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -31,7 +30,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavbarComponent,
-    DeleteConfirmationDialogComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
@@ -55,6 +53,7 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatInputModule,
     FormsModule,
+    MatButtonModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
